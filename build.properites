@@ -1,0 +1,8 @@
+product.name=infoq
+product.version=0.1
+product.description=An add-on to help convert infoq news to gdoc
+product.author=Ming Jin
+product.author.email=skyairmj@gmail.com
+product.homepage=http://twitter.com/mingjin
+product.minFFVersion=3.0
+product.maxFFVersion=3.5.*

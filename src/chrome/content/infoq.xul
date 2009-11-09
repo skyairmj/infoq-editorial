@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://@ProductName@/skin/infoq.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://@ProductName@/locale/infoq.dtd" >
+<overlay id="infoq" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/x-javascript" src="chrome://@ProductName@/content/infoq.js"/>
+	<stringbundleset>
+		<stringbundle id="strings" src="chrome://@ProductName@/locale/infoq.properties" />
+	</stringbundleset>
+
+	<hbox id="urlbar-icons">
+		<image class="infoq-icon" onclick="start()" id="location-image" tooltiptext="&status.tooltip;"/>
+	</hbox>
+</overlay>

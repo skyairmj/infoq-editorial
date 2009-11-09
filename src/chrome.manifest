@@ -1,0 +1,5 @@
+overlay chrome://browser/content/browser.xul chrome://@ProductName@/content/infoq.xul
+content @ProductName@ chrome/content/
+skin @ProductName@ default chrome/skin/
+locale @ProductName@ en-US chrome/locale/en-US/
+locale @ProductName@ zh-CN chrome/locale/zh-CN/

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="InfoQ Firefox add-on" default="package" basedir=".">
+	<property file="build.properties"/>
+	<property name="src.dir" value="${base.dir}/src" />
+	<property name="src.js.dir" value="${src.dir}/chrome/content/" />
+	<property name="build.dir" value="${base.dir}/build" />
+	<property name="build.src.dir" value="${build.dir}/src" />
+	<property name="build.src.js.file" value="${build.dir}/src/chrome/content/infoq.js" />
+
+	<target name="clean">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.src.dir}" />
+	</target>
+
+	<target name="prepare" depends="init">
+		<copy todir="${build.src.dir}">
+			<fileset dir="${src.dir}" excludes="**/*.js" />
+			<filterset>
+				<filter token="ProductName" value="${product.name}" />
+				<filter token="Version" value="${product.version}" />
+				<filter token="Description" value="${product.description}" />
+				<filter token="Author" value="${product.author}" />
+				<filter token="AuthorEmail" value="${product.author.email}" />
+				<filter token="Homepage" value="${product.homepage}" />
+				<filter token="MaxFFVersion" value="${product.maxFFVersion}" />
+				<filter token="MinFFVersion" value="${product.minFFVersion}" />
+			</filterset>
+		</copy>
+
+		<concat destfile="${build.src.js.file}">
+			<fileset dir="${src.js.dir}" includes="**/*.js" />
+		</concat>
+	</target>
+
+	<target name="package" depends="prepare">
+		<zip destfile="${build.dir}\infoq-editorial-toolkit.xpi" basedir="${build.src.dir}" />
+	</target>
+</project>
