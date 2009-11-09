@@ -2,12 +2,17 @@
 <?xml-stylesheet href="chrome://@ProductName@/skin/infoq.css" type="text/css"?>
 <!DOCTYPE overlay SYSTEM "chrome://@ProductName@/locale/infoq.dtd" >
 <overlay id="infoq" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-  <script type="application/x-javascript" src="chrome://@ProductName@/content/infoq.js"/>
+	<script type="application/x-javascript" src="chrome://@ProductName@/content/infoq.js"/>
 	<stringbundleset>
 		<stringbundle id="strings" src="chrome://@ProductName@/locale/infoq.properties" />
 	</stringbundleset>
 
-	<hbox id="urlbar-icons">
+	<!--<hbox id="urlbar-icons">
 		<image class="infoq-icon" onclick="start()" id="location-image" tooltiptext="&status.tooltip;"/>
-	</hbox>
+	</hbox>-->
+	
+	<menupopup id="contentAreaContextMenu" >
+		<menuitem id="infoq-news-conversion" image="chrome://@ProductName@/skin/infoq-icon.png" class="menuitem-iconic" label="Convert to GDoc..." oncommand="start()"/>
+	</menupopup>
+
 </overlay>

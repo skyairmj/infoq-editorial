@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name="InfoQ Firefox add-on" default="package" basedir=".">
 	<property file="build.properties"/>
-	<property name="src.dir" value="${base.dir}/src" />
+	<property name="src.dir" value="${basedir}/src" />
 	<property name="src.js.dir" value="${src.dir}/chrome/content/" />
-	<property name="build.dir" value="${base.dir}/build" />
+	<property name="build.dir" value="${basedir}/build" />
 	<property name="build.src.dir" value="${build.dir}/src" />
 	<property name="build.src.js.file" value="${build.dir}/src/chrome/content/infoq.js" />
 
@@ -30,6 +30,8 @@
 				<filter token="MinFFVersion" value="${product.minFFVersion}" />
 			</filterset>
 		</copy>
+		
+		<copy file="${src.dir}/chrome/skin/infoq-icon.png" todir="${build.src.dir}/chrome/skin" overwrite="true"/>
 
 		<concat destfile="${build.src.js.file}">
 			<fileset dir="${src.js.dir}" includes="**/*.js" />

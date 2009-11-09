@@ -21,7 +21,6 @@ Addon.prototype.getUserAccount = function()
 	return Services.getUsernameAndPassword();
 }
 
-
 Addon.prototype.uploadToGoogleDoc = function(ticket, entry)
 {
 	var progressBar = new ProgressBar(this.htmlDocument, "Uploading..."); 

@@ -42,9 +42,9 @@ InfoQEntry.prototype.getBody = function()
 
 InfoQEntry.prototype.getContent = function()
 {
-	return "<h1>" + this.getTitle() + "</h1>"
-			+ "<h2>abstract</h2><p>" + this.getAbstract() + "</p>"
-			+ "<h2>content</h2>" + this.getBody()
+	return "<p>标题：" + this.getTitle() + "</p>"
+			+ "<p>摘要：<br/>" + this.getAbstract() + "</p>"
+			+ "<p>正文：<br/>" + this.getBody() +"</p>"
 			+ "<b>查看英文原文：</b><a href='" + this.url + "'>" + this.getTitle() + "</a>";
 }
 
