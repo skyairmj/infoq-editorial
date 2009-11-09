@@ -10,8 +10,16 @@
 	<!--<hbox id="urlbar-icons">
 		<image class="infoq-icon" onclick="start()" id="location-image" tooltiptext="&status.tooltip;"/>
 	</hbox>-->
+	<script>
+		window.addEventListener("load", init_infoq_news_conversion, false);
+		function init_infoq_news_conversion()
+		{
+		  var menu = document.getElementById("contentAreaContextMenu");
+		  menu.addEventListener("popupshowing", checkWindowPage, false);
+		}
+	</script>
 	
-	<menupopup id="contentAreaContextMenu" >
+	<menupopup id="contentAreaContextMenu">
 		<menuitem id="infoq-news-conversion" image="chrome://@ProductName@/skin/infoq-icon.png" class="menuitem-iconic" label="Convert to GDoc..." oncommand="start()"/>
 	</menupopup>
 

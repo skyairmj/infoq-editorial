@@ -12,6 +12,12 @@ function start()
 	}
 }
 
+function checkWindowPage()
+{
+	url = window.content.location.href
+	isInfoqNewsOrArticle = url.search(/www.infoq.com\/news\/\d{4}\/\d{2}\/.+/i) > 0 || url.search(/www.infoq.com\/articles\/.+/i) > 0;
+	document.getElementById("infoq-news-conversion").hidden = !isInfoqNewsOrArticle;
+}
 
 function handleException(exception)
 {

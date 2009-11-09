@@ -5,8 +5,8 @@ function InfoQEntryFactory()
 InfoQEntryFactory.create = function(htmlDocument)
 {
 	var url = htmlDocument.url();
-	if(url.search(/www.infoq.com\/(cn\/)?news\/\d{4}\/\d{2}\/.+/i) > -1
-	|| url.search(/www.infoq.com\/(cn\/)?articles\/.+/i) > -1)
+	if(url.search(/www.infoq.com\/news\/\d{4}\/\d{2}\/.+/i) > -1
+	|| url.search(/www.infoq.com\/articles\/.+/i) > -1)
 	{
 		return new InfoQEntry(htmlDocument);
 	}

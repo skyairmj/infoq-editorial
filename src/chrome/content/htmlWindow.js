@@ -12,7 +12,7 @@ HtmlWindow.prototype.newTab = function(url)
 {
 	if(url)
 	{
-		this.window.open(url);
+		this.window.gBrowser.addTab(url);
 	}
 }
 
